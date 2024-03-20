@@ -36,4 +36,9 @@ export default class LoginPage {
   async checkFailedLogin(){
     await expect(this.failedLoginMessage).toHaveText("Your email or password is incorrect!");
   }
+
+  async doLogout(){
+    await this.logOutButton.click();
+    await expect(this.loginTitle).toHaveText("Login to your account");
+  }
 }

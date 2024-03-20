@@ -36,4 +36,11 @@ test.describe('Login Tests', () => {
                 await loginPage.doLogin(email, invalidPassword);
                 await loginPage.checkFailedLogin();
             });
+        test('Logout test', {
+            tag: '@smoke',
+        }, async({}) =>{
+            await loginPage.doLogin(email, password);
+            await loginPage.checkLogin();
+            await loginPage.doLogout();
+        });
 });
