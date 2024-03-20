@@ -22,7 +22,7 @@ export default class LoginPage {
   }
 
   async doLogin(email, password) {
-    await this.signUpButton.first().click();
+    await this.signUpButton.click();
     await expect(this.loginTitle).toHaveText("Login to your account");
     await this.emailAddressField.fill(email);
     await this.passwordField.fill(password);
